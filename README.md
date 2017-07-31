@@ -16,7 +16,16 @@ To generate a box, execute the following after the provisioning script exits the
 ```
 vagrant package --output mynew.box
 ```
+A prebuilt image from this Vagrantfile for Virtualbox can be found at:
 
-The image generated from this script can be found at:
+```
+https://app.vagrantup.com/codementality/boxes/centos7-docker
+```
 
-
+To use the prebuilt image, add the following to your Vagrantfile:
+```
+Vagrant.configure("2") do |config|
+  config.vm.box = "codementality/centos7-docker"
+  config.vm.box_version = "1.2"
+end
+```
